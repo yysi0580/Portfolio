@@ -1,0 +1,228 @@
+- generic [active] [ref=e1]:
+  - link "본문으로 바로가기" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "홈으로 이동" [ref=e6] [cursor=pointer]:
+          - /url: "#top"
+          - generic [ref=e7]: Yang Siyeol
+          - generic [ref=e8]: 양시열의 포트폴리오
+        - navigation "주요 메뉴" [ref=e9]:
+          - link "About" [ref=e10] [cursor=pointer]:
+            - /url: "#about"
+          - link "Projects" [ref=e11] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Capability" [ref=e12] [cursor=pointer]:
+            - /url: "#capability"
+          - link "Contact" [ref=e13] [cursor=pointer]:
+            - /url: "#contact"
+    - main [ref=e14]:
+      - generic [ref=e16]:
+        - complementary [ref=e17]:
+          - paragraph [ref=e18]: 2026 Portfolio
+          - generic [ref=e19]:
+            - text: Portfolio
+            - strong [ref=e20]: 양시열의 포트폴리오
+          - generic [ref=e21]:
+            - text: Core
+            - paragraph [ref=e22]: Java / Spring Boot
+          - generic [ref=e23]:
+            - text: Focus
+            - paragraph [ref=e24]: 인증 · 결제 · 정산 · 운영 API
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - paragraph [ref=e27]: Yang Siyeol
+            - heading "양시열의 포트폴리오" [level=1] [ref=e28]
+            - paragraph [ref=e29]: 작업과 구현 경험을 한눈에 볼 수 있도록 정리했습니다.
+            - generic [ref=e30]:
+              - link "작업 보기" [ref=e31] [cursor=pointer]:
+                - /url: "#projects"
+              - link "문의하기" [ref=e32] [cursor=pointer]:
+                - /url: mailto:yysi00558800@gmail.com
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - paragraph [ref=e35]: Core Keywords
+              - generic [ref=e36]: "01"
+            - generic [ref=e38]:
+              - generic [ref=e39]: AUTH
+              - generic [ref=e40]: PAYMENT
+              - generic [ref=e41]: SETTLEMENT
+            - generic [ref=e43]:
+              - text: Identity
+              - strong [ref=e44]: 상태 기반 비즈니스 로직
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - paragraph [ref=e48]: "01"
+            - heading "About" [level=2] [ref=e49]
+          - paragraph [ref=e50]: 흐름이 있는 서비스를 구조화하고 끝까지 구현하는 일을 좋아합니다.
+        - generic [ref=e51]:
+          - article [ref=e52]:
+            - paragraph [ref=e53]: 요구사항을 구조화하고 필요한 기능을 끝까지 구현해 결과로 연결하는 개발자입니다.
+            - paragraph [ref=e54]: JWT 인증, 역할 기반 접근 제어, 주문·결제·정산 흐름, 운영 조회 기능 구현 경험이 있으며 React와 Flutter 프로젝트를 함께 다루며 화면과 서버 구조가 유기적으로 맞물리는 지점을 이해해왔습니다.
+          - generic [ref=e55]:
+            - generic [ref=e56]:
+              - generic [ref=e57]: Work Style
+              - strong [ref=e58]: 문제를 그냥 넘기지 않고 끝까지 결과를 확인합니다.
+            - generic [ref=e59]:
+              - generic [ref=e60]: Interesting Problems
+              - strong [ref=e61]: 인증, 상태 전이, 예외 처리, 운영 기능 설계
+            - generic [ref=e62]:
+              - generic [ref=e63]: What I Can Contribute
+              - strong [ref=e64]: 안정적인 API 구조와 유지보수 가능한 로직 정리
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - paragraph [ref=e68]: "02"
+            - heading "Selected Projects" [level=2] [ref=e69]
+          - paragraph [ref=e70]: 어떤 비즈니스 흐름을 다뤘고, 그 안에서 어떤 역할을 맡았는지 정리했습니다.
+        - generic [ref=e71]:
+          - article [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]: "01"
+              - generic [ref=e75]:
+                - paragraph [ref=e76]: Flagship Backend
+                - heading "Barotruck" [level=3] [ref=e77]
+            - generic [ref=e78]:
+              - paragraph [ref=e79]: 주문부터 배차, 운행, 결제, 정산까지 이어지는 통합 물류 운영 플랫폼 프로젝트입니다. 사용자 서비스, 관리자 웹, 백엔드 서버가 분리된 구조 안에서 실서비스형 흐름을 경험했습니다.
+              - list [ref=e80]:
+                - listitem [ref=e81]: 주문 → 배차 → 운행 → 결제 → 정산으로 이어지는 단계별 구조 이해
+                - listitem [ref=e82]: 백엔드 영역에서 주문, 결제, 정산, 문서화 중심 기능 구현
+                - listitem [ref=e83]: 프론트와 관리자 웹, 서버가 함께 맞물리는 구조 경험
+              - generic [ref=e84]:
+                - generic [ref=e85]: Spring Boot
+                - generic [ref=e86]: Java
+                - generic [ref=e87]: Payment
+                - generic [ref=e88]: Settlement
+                - generic [ref=e89]: Operations
+              - generic "Barotruck 실행 및 다운로드" [ref=e90]:
+                - article [ref=e91]:
+                  - paragraph [ref=e92]: Admin Front
+                  - strong [ref=e93]: 관리자 웹 접속 주소
+                  - paragraph [ref=e94]: Barotruck 관리자 웹은 아래 주소로 바로 접속할 수 있도록 연결했습니다. 실행 포트는 8082입니다.
+                  - generic "관리자 테스트 계정" [ref=e95]:
+                    - paragraph [ref=e96]: 테스트 계정
+                    - generic [ref=e97]:
+                      - generic [ref=e98]: Email
+                      - code [ref=e99]: test4@4.4
+                    - generic [ref=e100]:
+                      - generic [ref=e101]: Password
+                      - code [ref=e102]: "11111111"
+                  - link "관리자 웹 열기" [ref=e103] [cursor=pointer]:
+                    - /url: http://yangtheory.site:8082
+                - article [ref=e104]:
+                  - paragraph [ref=e105]: Android APK
+                  - strong [ref=e106]: 모바일 앱 다운로드
+                  - paragraph [ref=e107]:
+                    - text: 브라우저 정책에 걸리지 않도록 GitHub HTTPS 다운로드 경로로 연결했습니다. 파일명은
+                    - code [ref=e108]: barotruck-app-release.apk
+                    - text: 입니다.
+                  - link "APK 다운로드" [ref=e109] [cursor=pointer]:
+                    - /url: https://github.com/yysi0580/Portfolio/raw/main/downloads/barotruck-app-release.apk
+              - generic [ref=e110]:
+                - link "Backend Repo" [ref=e111] [cursor=pointer]:
+                  - /url: https://github.com/TjoeunLast/Backend
+                - link "Frontend Repo" [ref=e112] [cursor=pointer]:
+                  - /url: https://github.com/TjoeunLast/FrontNew
+                - link "Admin Repo" [ref=e113] [cursor=pointer]:
+                  - /url: https://github.com/TjoeunLast/Admin_FrontEnd
+          - article [ref=e114]:
+            - generic [ref=e115]:
+              - generic [ref=e116]: "02"
+              - generic [ref=e117]:
+                - paragraph [ref=e118]: Backend Project
+                - heading "ObserverSpring" [level=3] [ref=e119]
+            - generic [ref=e120]:
+              - paragraph [ref=e121]: Minecraft 관찰/모니터링 플랫폼으로, JWT 인증과 스냅샷/로그 수집 API, 플레이어 조회 기능을 구현했습니다.
+              - list [ref=e122]:
+                - listitem [ref=e123]: Spring Boot 4 + Java 21 기반 백엔드 구조 설계
+                - listitem [ref=e124]: Oracle CLOB JSON으로 11 x 11 x 3 레이어 데이터 저장 설계
+                - listitem [ref=e125]: 프론트 정적 리소스 연결과 SPA 라우팅 포워딩까지 경험
+              - generic [ref=e126]:
+                - generic [ref=e127]: Spring Boot
+                - generic [ref=e128]: JWT
+                - generic [ref=e129]: Oracle
+                - generic [ref=e130]: API Design
+              - link "Repository" [ref=e132] [cursor=pointer]:
+                - /url: https://github.com/ObserverPLUGIN/observerspring
+          - article [ref=e133]:
+            - generic [ref=e134]:
+              - generic [ref=e135]: "03"
+              - generic [ref=e136]:
+                - paragraph [ref=e137]: Mobile Product
+                - heading "Florit" [level=3] [ref=e138]
+            - generic [ref=e139]:
+              - paragraph [ref=e140]: AI 기반 꽃 추천과 주변 꽃집 검색을 결합한 모바일 앱입니다. Flutter UI/UX 구현과 지도 연동, 상세 흐름 연결에 집중했습니다.
+              - list [ref=e141]:
+                - listitem [ref=e142]: 추천 결과, 상세 화면, 지도 연동, 사용자 인터랙션 구현
+                - listitem [ref=e143]: 인증, 최근 검색어, 즐겨찾기 등 앱 흐름 연결
+                - listitem [ref=e144]: 텍스트 기반 추천 흐름을 실제 서비스 화면으로 구체화
+              - generic [ref=e145]:
+                - generic [ref=e146]: Flutter
+                - generic [ref=e147]: Mobile UI
+                - generic [ref=e148]: Map
+                - generic [ref=e149]: Interaction
+              - link "Frontend" [ref=e151] [cursor=pointer]:
+                - /url: https://github.com/tjoeunProject2/frontend
+          - article [ref=e152]:
+            - generic [ref=e153]:
+              - generic [ref=e154]: "04"
+              - generic [ref=e155]:
+                - paragraph [ref=e156]: Frontend Project
+                - heading "NewsMoa" [level=3] [ref=e157]
+            - generic [ref=e158]:
+              - paragraph [ref=e159]: 뉴스 OpenAPI 기반 뉴스 통합 조회 웹 서비스입니다. 비동기 데이터 처리와 상태별 UI 분리를 통해 사용자 관점의 흐름을 구현했습니다.
+              - list [ref=e160]:
+                - listitem [ref=e161]: 뉴스 목록, 상세, 카테고리 조회 화면 구성
+                - listitem [ref=e162]: 로딩, 오류, 데이터 없음 상태를 분리해 UI 반영
+                - listitem [ref=e163]: API 연동과 화면 흐름 연결 경험 축적
+              - generic [ref=e164]:
+                - generic [ref=e165]: React
+                - generic [ref=e166]: JavaScript
+                - generic [ref=e167]: Async UI
+                - generic [ref=e168]: API Integration
+              - link "Frontend" [ref=e170] [cursor=pointer]:
+                - /url: https://github.com/skarnddydwls/project
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - paragraph [ref=e174]: "03"
+            - heading "Capability" [level=2] [ref=e175]
+          - paragraph [ref=e176]: 실무에서 바로 기여할 수 있는 구현 역량만 추렸습니다.
+        - generic [ref=e177]:
+          - article [ref=e178]:
+            - heading "상태 기반 비즈니스 로직" [level=3] [ref=e179]
+            - paragraph [ref=e180]: 주문, 결제, 정산처럼 단계가 이어지는 흐름을 모델링하고 조건과 예외를 분리해 관리합니다.
+          - article [ref=e181]:
+            - heading "인증과 권한 제어" [level=3] [ref=e182]
+            - paragraph [ref=e183]: JWT 기반 인증과 역할 기반 접근 제어를 적용해 사용자 유형별 API 흐름을 설계하고 구현합니다.
+          - article [ref=e184]:
+            - heading "운영 기능 설계" [level=3] [ref=e185]
+            - paragraph [ref=e186]: 사용자 기능뿐 아니라 관리자 조회, 로그 확인, 상태 점검처럼 운영에 필요한 기능까지 함께 설계합니다.
+          - article [ref=e187]:
+            - heading "프론트와의 연결 감각" [level=3] [ref=e188]
+            - paragraph [ref=e189]: React와 Flutter 프로젝트를 다루며 화면에서 필요한 데이터와 예외를 고려한 API를 만들 수 있습니다.
+        - generic [ref=e190]:
+          - generic [ref=e191]:
+            - text: Backend
+            - paragraph [ref=e192]: Java, Spring Boot, Spring Security, JPA, Querydsl, JWT
+          - generic [ref=e193]:
+            - text: Frontend / App
+            - paragraph [ref=e194]: React, Flutter, TypeScript, JavaScript, HTML, CSS
+          - generic [ref=e195]:
+            - text: Database / Infra / Tools
+            - paragraph [ref=e196]: Oracle, MySQL, Docker, Linux, Swagger, Postman, GitHub
+      - generic [ref=e198]:
+        - generic [ref=e199]:
+          - paragraph [ref=e200]: "04"
+          - heading "Contact" [level=2] [ref=e201]
+        - generic [ref=e202]:
+          - paragraph [ref=e203]: 기존 서비스 구조를 빠르게 이해하고, 안정적인 구현과 예외 처리 개선으로 팀에 기여하는 개발자가 되고자 합니다. 협업이나 채용 관련 문의는 아래 링크로 편하게 연락 주세요.
+          - generic [ref=e204]:
+            - link "yysi00558800@gmail.com" [ref=e205] [cursor=pointer]:
+              - /url: mailto:yysi00558800@gmail.com
+            - link "github.com/yysi0580" [ref=e206] [cursor=pointer]:
+              - /url: https://github.com/yysi0580
+    - contentinfo [ref=e207]:
+      - paragraph [ref=e208]: © 2026 yysi0580
