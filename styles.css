@@ -505,6 +505,44 @@ img {
   line-height: 1.7;
 }
 
+.work-access__credentials {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  background: rgba(18, 18, 18, 0.03);
+}
+
+.work-access__credentials-title {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.76rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.work-access__credential-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.92rem;
+}
+
+.work-access__credential-row span {
+  color: var(--muted);
+}
+
+.work-access__credential-row code {
+  padding: 0.2rem 0.45rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(18, 18, 18, 0.08);
+  color: var(--ink);
+  font-size: 0.88rem;
+  word-break: break-all;
+}
+
 .work-access__button {
   display: inline-flex;
   align-items: center;

@@ -1,0 +1,14 @@
+[     288ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ http://yangtheory.site:8080/api/admin/payment/fee-policy/current:0
+[     289ms] [ERROR] 수수료 정책 로드 실패: AxiosError: Request failed with status code 403
+    at eN (http://yangtheory.site:8082/_next/static/chunks/0w.b-814xzlbo.js:1:40428)
+    at XMLHttpRequest.b (http://yangtheory.site:8082/_next/static/chunks/0w.b-814xzlbo.js:1:44799)
+    at tn.request (http://yangtheory.site:8082/_next/static/chunks/0w.b-814xzlbo.js:1:53248)
+    at async Object.getCurrentFeePolicy (http://yangtheory.site:8082/_next/static/chunks/0bkroruqoe9r8.js:1:1915)
+    at async http://yangtheory.site:8082/_next/static/chunks/0bkroruqoe9r8.js:1:8022 @ http://yangtheory.site:8082/_next/static/chunks/0bkroruqoe9r8.js:0
+[     289ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ http://yangtheory.site:8080/api/user/me:0
+[     290ms] [ERROR] 관리자 정보를 불러오는데 실패했습니다. AxiosError: Request failed with status code 403
+    at eN (http://yangtheory.site:8082/_next/static/chunks/0w.b-814xzlbo.js:1:40428)
+    at XMLHttpRequest.b (http://yangtheory.site:8082/_next/static/chunks/0w.b-814xzlbo.js:1:44799)
+    at tn.request (http://yangtheory.site:8082/_next/static/chunks/0w.b-814xzlbo.js:1:53248)
+    at async a (http://yangtheory.site:8082/_next/static/chunks/08w_jj1o_dxhh.js:1:4247)
+    at async http://yangtheory.site:8082/_next/static/chunks/08w_jj1o_dxhh.js:3:8282 @ http://yangtheory.site:8082/_next/static/chunks/08w_jj1o_dxhh.js:2
