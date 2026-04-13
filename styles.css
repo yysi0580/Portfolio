@@ -9,6 +9,7 @@
   --accent: #b5532f;
   --accent-soft: rgba(181, 83, 47, 0.12);
   --max-width: 1240px;
+  --anchor-offset: clamp(96px, 12vw, 148px);
 }
 
 * {
@@ -17,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--anchor-offset);
 }
 
 body {
@@ -128,6 +130,7 @@ img {
 
 .section {
   padding: 4.5rem 0;
+  scroll-margin-top: var(--anchor-offset);
 }
 
 .hero {
