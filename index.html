@@ -163,13 +163,14 @@
               <div class="work-item__body">
                 <p class="work-summary">
                   주문부터 배차, 운행, 결제, 정산까지 이어지는 통합 물류 운영
-                  플랫폼 프로젝트입니다. ERD, 관리자 화면, 화주·차주 앱 자료를
-                  함께 정리하면서 서비스 흐름을 구조적으로 다뤘습니다.
+                  플랫폼 프로젝트입니다. 5인 팀으로 기획, 문서 작성, 서버 개발,
+                  프론트·모바일 구현, 연결 작업을 나눠 진행했고, ERD와 시퀀스,
+                  API 문서, 관리자 화면을 함께 보며 서비스 흐름을 구조적으로 다뤘습니다.
                 </p>
                 <ul class="work-points">
-                  <li>배송 요청 → 후보 탐색 → 배차 확정 → 정산 승인 흐름을 시퀀스와 화면 기준으로 정리</li>
-                  <li>정산, 회원 승인, 신고·제재 같은 관리자 운영 기능을 화면과 로직 양쪽에서 이해</li>
-                  <li>화주·차주 앱 화면에 맞춰 필요한 입력값, 상태값, 예외 흐름을 백엔드 관점으로 연결</li>
+                  <li>배송 요청 → 후보 탐색 → 배차 확정 → 정산 승인 흐름을 ERD, 시퀀스, API Docs 기준으로 정리</li>
+                  <li>회원가입, 리뷰·신고, 오더 처리, 화주 요청 값처럼 프론트-백엔드 연결 포인트를 구체적으로 맞춤</li>
+                  <li>정산, 회원 승인, 신고·제재 같은 관리자 운영 기능을 사용자 앱 흐름과 함께 이해</li>
                 </ul>
                 <div class="work-tags">
                   <span>Spring Boot</span>
@@ -186,78 +187,88 @@
                       흐름을 다뤘는지 한눈에 보이게 정리했습니다.
                     </p>
                   </div>
-                  <div class="work-gallery work-gallery--barotruck">
-                    <figure class="work-shot work-shot--diagram">
-                      <a
-                        href="assets/projects/barotruck/barotruck-erd.png"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="assets/projects/barotruck/barotruck-erd.png"
-                          alt="Barotruck ERD"
-                          loading="lazy"
-                        />
-                      </a>
-                      <figcaption>주문, 사용자, 정산, 리뷰, 신고 관계를 ERD로 정리</figcaption>
-                    </figure>
-                    <figure class="work-shot work-shot--wide">
-                      <a
-                        href="assets/projects/barotruck/barotruck-admin-settlement.png"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="assets/projects/barotruck/barotruck-admin-settlement.png"
-                          alt="Barotruck 관리자 정산 및 매출 관리 화면"
-                          loading="lazy"
-                        />
-                      </a>
-                      <figcaption>관리자 웹에서 정산·매출 상태를 운영 화면으로 관리</figcaption>
-                    </figure>
-                    <figure class="work-shot work-shot--phone">
-                      <a
-                        href="assets/projects/barotruck/barotruck-shipper-register.png"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="assets/projects/barotruck/barotruck-shipper-register.png"
-                          alt="Barotruck 화주 화물 등록 화면"
-                          loading="lazy"
-                        />
-                      </a>
-                      <figcaption>화주 앱에서 화물 조건과 배차 옵션을 입력하는 등록 흐름</figcaption>
-                    </figure>
-                    <figure class="work-shot work-shot--phone">
-                      <a
-                        href="assets/projects/barotruck/barotruck-driver-settlement.png"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="assets/projects/barotruck/barotruck-driver-settlement.png"
-                          alt="Barotruck 차주 정산내역 화면"
-                          loading="lazy"
-                        />
-                      </a>
-                      <figcaption>차주 앱에서 매출·입금 상태를 확인하는 정산 화면</figcaption>
-                    </figure>
-                  </div>
-                  <div class="work-doc-grid">
-                    <article class="work-doc-card">
-                      <strong>배송 흐름 문서화</strong>
-                      <p>요청 생성, 후보 탐색, 제안 만료, 수락 경쟁, 배차 확정 단계를 시퀀스로 분리했습니다.</p>
-                    </article>
-                    <article class="work-doc-card">
-                      <strong>관리자 운영 시나리오</strong>
-                      <p>차주 승인·반려, 정산 승인·보류, 신고 접수·제재 처리 흐름을 관리자 기능 단위로 정리했습니다.</p>
-                    </article>
-                    <article class="work-doc-card">
-                      <strong>역할별 화면 연결</strong>
-                      <p>화주 앱, 차주 앱, 관리자 웹이 어떤 상태를 공유하는지 화면 자료 기준으로 맞춰봤습니다.</p>
-                    </article>
-                  </div>
+                  <details class="work-disclosure">
+                    <summary>
+                      <span>자료 미리보기 펼치기</span>
+                      <small>ERD 1장 · 운영 화면 1장 · 앱 화면 2장</small>
+                    </summary>
+                    <p class="work-disclosure__note">
+                      기본은 접어두고, 펼치면 작은 썸네일로 보고 클릭 시 새 창에서
+                      크게 확인할 수 있게 정리했습니다.
+                    </p>
+                    <div class="work-gallery work-gallery--barotruck">
+                      <figure class="work-shot work-shot--diagram">
+                        <a
+                          href="assets/projects/barotruck/barotruck-erd.png"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="assets/projects/barotruck/barotruck-erd.png"
+                            alt="Barotruck ERD"
+                            loading="lazy"
+                          />
+                        </a>
+                        <figcaption>주문, 사용자, 정산, 리뷰, 신고 관계를 ERD로 정리</figcaption>
+                      </figure>
+                      <figure class="work-shot work-shot--wide">
+                        <a
+                          href="assets/projects/barotruck/barotruck-admin-settlement.png"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="assets/projects/barotruck/barotruck-admin-settlement.png"
+                            alt="Barotruck 관리자 정산 및 매출 관리 화면"
+                            loading="lazy"
+                          />
+                        </a>
+                        <figcaption>관리자 웹에서 정산·매출 상태를 운영 화면으로 관리</figcaption>
+                      </figure>
+                      <figure class="work-shot work-shot--phone">
+                        <a
+                          href="assets/projects/barotruck/barotruck-shipper-register.png"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="assets/projects/barotruck/barotruck-shipper-register.png"
+                            alt="Barotruck 화주 화물 등록 화면"
+                            loading="lazy"
+                          />
+                        </a>
+                        <figcaption>화주 앱에서 화물 조건과 배차 옵션을 입력하는 등록 흐름</figcaption>
+                      </figure>
+                      <figure class="work-shot work-shot--phone">
+                        <a
+                          href="assets/projects/barotruck/barotruck-driver-settlement.png"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="assets/projects/barotruck/barotruck-driver-settlement.png"
+                            alt="Barotruck 차주 정산내역 화면"
+                            loading="lazy"
+                          />
+                        </a>
+                        <figcaption>차주 앱에서 매출·입금 상태를 확인하는 정산 화면</figcaption>
+                      </figure>
+                    </div>
+                    <div class="work-doc-grid">
+                      <article class="work-doc-card">
+                        <strong>배송 흐름 문서화</strong>
+                        <p>요청 생성, 후보 탐색, 제안 만료, 수락 경쟁, 배차 확정 단계를 시퀀스로 분리했습니다.</p>
+                      </article>
+                      <article class="work-doc-card">
+                        <strong>협업 문서 운영</strong>
+                        <p>Notion에서 일정, 역할 분담, ERD, 유즈케이스, API Docs, Postman, 연결 이슈를 트랙별로 관리했습니다.</p>
+                      </article>
+                      <article class="work-doc-card">
+                        <strong>연결 이슈 정리</strong>
+                        <p>회원가입, 리뷰·신고, 오더 관련 처리, 화주 요청 값처럼 프론트와 백엔드가 맞춰야 할 항목을 따로 정리했습니다.</p>
+                      </article>
+                    </div>
+                  </details>
                 </section>
                 <div class="work-access" aria-label="Barotruck 실행 및 다운로드">
                   <article class="work-access__card">
@@ -375,64 +386,74 @@
                       경험을 만들려 했는지 바로 보이게 구성했습니다.
                     </p>
                   </div>
-                  <div class="work-gallery work-gallery--mobile">
-                    <figure class="work-shot work-shot--phone">
-                      <a
-                        href="assets/projects/florit/florit-home.png"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="assets/projects/florit/florit-home.png"
-                          alt="Florit 홈 화면"
-                          loading="lazy"
-                        />
-                      </a>
-                      <figcaption>추천 홈에서 기념일·계절 꽃을 탐색하는 시작 화면</figcaption>
-                    </figure>
-                    <figure class="work-shot work-shot--phone">
-                      <a
-                        href="assets/projects/florit/florit-search.png"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="assets/projects/florit/florit-search.png"
-                          alt="Florit 검색 화면"
-                          loading="lazy"
-                        />
-                      </a>
-                      <figcaption>검색어, 인기 키워드, 분위기별 탐색을 모은 검색 화면</figcaption>
-                    </figure>
-                    <figure class="work-shot work-shot--phone">
-                      <a
-                        href="assets/projects/florit/florit-map.png"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="assets/projects/florit/florit-map.png"
-                          alt="Florit 지도 화면"
-                          loading="lazy"
-                        />
-                      </a>
-                      <figcaption>근처 꽃집을 지도와 카드 정보로 함께 보여주는 화면</figcaption>
-                    </figure>
-                    <figure class="work-shot work-shot--phone">
-                      <a
-                        href="assets/projects/florit/florit-archive.png"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="assets/projects/florit/florit-archive.png"
-                          alt="Florit 보관함 화면"
-                          loading="lazy"
-                        />
-                      </a>
-                      <figcaption>저장한 꽃과 관심 콘텐츠를 모아보는 보관함 화면</figcaption>
-                    </figure>
-                  </div>
+                  <details class="work-disclosure">
+                    <summary>
+                      <span>화면 미리보기 펼치기</span>
+                      <small>홈 · 검색 · 지도 · 보관함</small>
+                    </summary>
+                    <p class="work-disclosure__note">
+                      모바일 화면은 세로 비율이 길어서 기본은 숨기고, 펼치면 썸네일
+                      형태로만 보여주도록 압축했습니다.
+                    </p>
+                    <div class="work-gallery work-gallery--mobile">
+                      <figure class="work-shot work-shot--phone">
+                        <a
+                          href="assets/projects/florit/florit-home.png"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="assets/projects/florit/florit-home.png"
+                            alt="Florit 홈 화면"
+                            loading="lazy"
+                          />
+                        </a>
+                        <figcaption>추천 홈에서 기념일·계절 꽃을 탐색하는 시작 화면</figcaption>
+                      </figure>
+                      <figure class="work-shot work-shot--phone">
+                        <a
+                          href="assets/projects/florit/florit-search.png"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="assets/projects/florit/florit-search.png"
+                            alt="Florit 검색 화면"
+                            loading="lazy"
+                          />
+                        </a>
+                        <figcaption>검색어, 인기 키워드, 분위기별 탐색을 모은 검색 화면</figcaption>
+                      </figure>
+                      <figure class="work-shot work-shot--phone">
+                        <a
+                          href="assets/projects/florit/florit-map.png"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="assets/projects/florit/florit-map.png"
+                            alt="Florit 지도 화면"
+                            loading="lazy"
+                          />
+                        </a>
+                        <figcaption>근처 꽃집을 지도와 카드 정보로 함께 보여주는 화면</figcaption>
+                      </figure>
+                      <figure class="work-shot work-shot--phone">
+                        <a
+                          href="assets/projects/florit/florit-archive.png"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="assets/projects/florit/florit-archive.png"
+                            alt="Florit 보관함 화면"
+                            loading="lazy"
+                          />
+                        </a>
+                        <figcaption>저장한 꽃과 관심 콘텐츠를 모아보는 보관함 화면</figcaption>
+                      </figure>
+                    </div>
+                  </details>
                 </section>
                 <div class="work-links">
                   <a href="projects/florit.html">프로젝트 상세</a>
