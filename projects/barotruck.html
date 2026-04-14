@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barotruck | 양시열의 포트폴리오</title>
+    <meta
+      name="description"
+      content="Barotruck 프로젝트의 구조, 시퀀스, 관리자 화면, 화주·차주 앱 흐름을 정리한 상세 페이지입니다."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="detail-page">
+    <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="site-header__inner">
+          <a class="brand" href="../index.html" aria-label="포트폴리오 홈으로 이동">
+            <span class="brand__name">Yang Siyeol</span>
+            <span class="brand__role">Barotruck Detail</span>
+          </a>
+          <nav class="site-nav" aria-label="프로젝트 이동">
+            <a href="../index.html">Home</a>
+            <a href="barotruck.html" class="is-active">Barotruck</a>
+            <a href="florit.html">Florit</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="section detail-main" id="main-content">
+        <section class="detail-hero">
+          <div class="detail-hero__copy">
+            <p class="section-label">Flagship Project</p>
+            <h1>Barotruck</h1>
+            <p class="detail-hero__summary">
+              주문부터 배차, 운행, 결제, 정산까지 이어지는 물류 플랫폼입니다.
+              이번 상세 페이지는 ERD, 관리자 시퀀스, 화주·차주 앱 화면, 관리자
+              웹 화면 자료를 바탕으로 프로젝트의 구조와 운영 흐름이 보이도록
+              다시 정리한 내용입니다.
+            </p>
+            <div class="detail-actions">
+              <a class="button button--primary" href="http://yangtheory.site:8082" target="_blank" rel="noreferrer">관리자 웹 열기</a>
+              <a class="button button--secondary" href="https://github.com/TjoeunLast/Backend" target="_blank" rel="noreferrer">Backend Repo</a>
+            </div>
+            <a class="detail-backlink" href="../index.html#projects">포트폴리오 프로젝트 목록으로 돌아가기</a>
+          </div>
+          <aside class="detail-aside">
+            <article class="detail-metric">
+              <span class="work-type">Role</span>
+              <strong>백엔드 중심 팀 프로젝트</strong>
+            </article>
+            <article class="detail-metric">
+              <span class="work-type">Materials</span>
+              <strong>ERD, 관리자 시퀀스, Figma 화면, 관리자 웹 시안</strong>
+            </article>
+            <article class="detail-metric">
+              <span class="work-type">Structure</span>
+              <strong>화주 앱 · 차주 앱 · 관리자 웹 · 백엔드 서버</strong>
+            </article>
+          </aside>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">01</p>
+              <h2>프로젝트 개요</h2>
+            </div>
+            <p class="detail-section__summary">
+              자료를 기준으로 보면 Barotruck는 단순 배차 앱이 아니라, 운송 요청
+              생성부터 정산 승인까지 이어지는 상태 기반 서비스에 가깝습니다.
+            </p>
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <h3>서비스 구조</h3>
+              <p>
+                화주가 화물을 등록하고, 차주가 오더를 확인하고, 관리자가 정산과
+                회원 상태를 운영하는 구조로 나뉘어 있습니다.
+              </p>
+            </article>
+            <article class="detail-card">
+              <h3>핵심 도메인</h3>
+              <p>
+                주문, 사용자, 배차 추적, 취소, 리뷰, 이슈, 정산 엔티티가 서로
+                연결되어 있어서 서비스 흐름을 데이터 모델로도 읽을 수 있습니다.
+              </p>
+            </article>
+            <article class="detail-card">
+              <h3>포트폴리오 포인트</h3>
+              <p>
+                제가 이 프로젝트에서 강조하고 싶은 부분은 화면 하나가 아니라,
+                화면 뒤에서 이어지는 상태 변화와 운영 로직을 함께 이해했다는 점입니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">02</p>
+              <h2>핵심 흐름</h2>
+            </div>
+            <p class="detail-section__summary">
+              시퀀스 자료를 기준으로 보면 서비스 흐름은 요청 생성, 후보 탐색,
+              배차 확정, 정산·운영 처리로 크게 나눌 수 있습니다.
+            </p>
+          </div>
+          <div class="detail-flow-grid">
+            <article class="detail-flow">
+              <h3>1. 요청 생성과 검증</h3>
+              <p>
+                화주가 상·하차지, 차종, 톤수, 배차 옵션을 입력하면 시스템은 입력값과
+                요금 조건을 확인하고 배차 가능한 상태로 전환합니다.
+              </p>
+            </article>
+            <article class="detail-flow">
+              <h3>2. 후보 탐색과 제안</h3>
+              <p>
+                운송 조건에 맞는 차주 후보를 탐색하고 제안을 전송한 뒤,
+                타임아웃·취소·만료 같은 분기까지 고려해 다음 상태를 결정합니다.
+              </p>
+            </article>
+            <article class="detail-flow">
+              <h3>3. 수락 경쟁과 배차 확정</h3>
+              <p>
+                여러 후보가 동시에 응답할 수 있으므로, 실제로는 수락 경쟁 이후
+                최종 배차를 확정하는 제어 로직이 중요합니다.
+              </p>
+            </article>
+            <article class="detail-flow">
+              <h3>4. 정산과 관리자 운영</h3>
+              <p>
+                운송 완료 뒤에는 화주 청구, 차주 지급, 미수금, 제재, 승인·보류
+                같은 운영 기능이 이어지며 관리자 웹이 이를 다룹니다.
+              </p>
+            </article>
+            <article class="detail-flow detail-flow--full">
+              <h3>자료로 확인한 운영 시나리오</h3>
+              <ul class="detail-list">
+                <li>차주 가입 승인·반려 시나리오</li>
+                <li>정산 승인·보류 시나리오</li>
+                <li>배차 취소, 신고 접수, 사용자 제재 처리 시나리오</li>
+                <li>실시간 관제 대시보드 흐름</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">03</p>
+              <h2>설계 자료</h2>
+            </div>
+            <p class="detail-section__summary">
+              발표 자료 중에서 구조를 설명하는 데 가장 중요한 ERD와 시퀀스 자료를 골랐습니다.
+            </p>
+          </div>
+          <div class="detail-visual-grid">
+            <figure class="detail-visual detail-visual--diagram">
+              <a href="../assets/projects/barotruck/barotruck-erd.png" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-erd.png" alt="Barotruck ERD" loading="lazy" />
+              </a>
+              <figcaption>주문, 사용자, 리뷰, 이슈, 정산이 어떻게 연결되는지 보여주는 ERD</figcaption>
+            </figure>
+            <figure class="detail-visual detail-visual--diagram">
+              <a href="../assets/projects/barotruck/barotruck-sequence-delivery.svg" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-sequence-delivery.svg" alt="Barotruck 배송 과정 통합 시퀀스" loading="lazy" />
+              </a>
+              <figcaption>요청 생성부터 후보 탐색, 배차 확정까지 이어지는 배송 과정 통합 시퀀스</figcaption>
+            </figure>
+            <figure class="detail-visual detail-visual--diagram">
+              <a href="../assets/projects/barotruck/barotruck-sequence-settlement.svg" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-sequence-settlement.svg" alt="Barotruck 정산 승인 보류 시퀀스" loading="lazy" />
+              </a>
+              <figcaption>관리자가 정산을 승인하거나 보류하는 관리자 운영 시퀀스</figcaption>
+            </figure>
+            <figure class="detail-visual detail-visual--diagram">
+              <a href="../assets/projects/barotruck/barotruck-sequence-driver-approval.svg" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-sequence-driver-approval.svg" alt="Barotruck 차주 가입 승인 시퀀스" loading="lazy" />
+              </a>
+              <figcaption>차주 가입 검토와 승인 과정을 정리한 관리자 시퀀스</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">04</p>
+              <h2>주요 화면</h2>
+            </div>
+            <p class="detail-section__summary">
+              관리자 웹과 화주·차주 앱 화면을 함께 놓고 보면, 한 서비스 안에서 각 역할이 무엇을 보는지 더 분명하게 드러납니다.
+            </p>
+          </div>
+          <div class="detail-visual-grid">
+            <figure class="detail-visual detail-visual--wide">
+              <a href="../assets/projects/barotruck/barotruck-admin-login.png" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-admin-login.png" alt="Barotruck 관리자 로그인 화면" loading="lazy" />
+              </a>
+              <figcaption>운영 기능 진입점이 되는 관리자 로그인 화면</figcaption>
+            </figure>
+            <figure class="detail-visual detail-visual--wide">
+              <a href="../assets/projects/barotruck/barotruck-admin-settlement.png" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-admin-settlement.png" alt="Barotruck 관리자 정산 관리 화면" loading="lazy" />
+              </a>
+              <figcaption>화주 청구와 차주 지급, 미수금 상태를 관리하는 정산·매출 관리 화면</figcaption>
+            </figure>
+            <figure class="detail-visual detail-visual--phone">
+              <a href="../assets/projects/barotruck/barotruck-shipper-home.png" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-shipper-home.png" alt="Barotruck 화주 홈 화면" loading="lazy" />
+              </a>
+              <figcaption>화주가 오늘의 운송 상태를 확인하고 바로 화물 등록으로 이어지는 홈 화면</figcaption>
+            </figure>
+            <figure class="detail-visual detail-visual--phone">
+              <a href="../assets/projects/barotruck/barotruck-shipper-register.png" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-shipper-register.png" alt="Barotruck 화주 화물 등록 화면" loading="lazy" />
+              </a>
+              <figcaption>배차 옵션과 운송 조건을 입력하는 화주 화물 등록 화면</figcaption>
+            </figure>
+            <figure class="detail-visual detail-visual--phone">
+              <a href="../assets/projects/barotruck/barotruck-driver-order-detail.png" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-driver-order-detail.png" alt="Barotruck 차주 오더 상세 화면" loading="lazy" />
+              </a>
+              <figcaption>차주가 운송료와 조건을 확인하고 즉시 배차를 받을 수 있는 오더 상세 화면</figcaption>
+            </figure>
+            <figure class="detail-visual detail-visual--phone">
+              <a href="../assets/projects/barotruck/barotruck-driver-settlement.png" target="_blank" rel="noreferrer">
+                <img src="../assets/projects/barotruck/barotruck-driver-settlement.png" alt="Barotruck 차주 정산내역 화면" loading="lazy" />
+              </a>
+              <figcaption>운송 매출, 입금 완료 금액, 입금 예정 금액을 확인하는 차주 정산 화면</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">05</p>
+              <h2>이 프로젝트에서 남긴 이해</h2>
+            </div>
+            <p class="detail-section__summary">
+              Barotruck 자료를 다시 정리하면서, 제가 특히 강점으로 가져가고 싶은 포인트는 아래 세 가지였습니다.
+            </p>
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <h3>상태 기반 사고</h3>
+              <p>
+                요청, 제안, 수락, 배차 확정, 운행 완료, 정산 승인처럼 서비스가
+                상태 전이로 움직일 때 로직을 어떻게 나눠야 하는지 배웠습니다.
+              </p>
+            </article>
+            <article class="detail-card">
+              <h3>운영 기능 감각</h3>
+              <p>
+                사용자 기능만이 아니라 관리자 화면에서 어떤 조회와 승인,
+                예외 처리 기능이 필요한지도 같이 봤다는 점이 이 프로젝트의 큰 장점입니다.
+              </p>
+            </article>
+            <article class="detail-card">
+              <h3>화면과 서버의 연결</h3>
+              <p>
+                앱 화면에서 필요한 입력값과 상태 표시가 결국 어떤 API와 데이터
+                구조를 요구하는지 연결해서 생각하게 됐습니다.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
