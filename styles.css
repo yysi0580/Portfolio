@@ -179,10 +179,6 @@ img {
   color: var(--accent);
 }
 
-.work-type{
-  align-items: center;
-}
-
 .section-index {
   font-size: 0.82rem;
   color: var(--accent);
