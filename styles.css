@@ -469,6 +469,105 @@ img {
   color: var(--muted);
 }
 
+.work-materials {
+  margin-top: 1.45rem;
+  padding-top: 1.45rem;
+  border-top: 1px solid var(--line);
+}
+
+.work-materials__header {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.work-materials__summary,
+.work-shot figcaption,
+.work-doc-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.work-gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+.work-gallery--barotruck {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.work-gallery--mobile {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.work-shot {
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.work-shot a {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(252, 250, 246, 0.82);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.work-shot a:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+
+.work-shot img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.work-shot--wide a,
+.work-shot--diagram a {
+  aspect-ratio: 16 / 10;
+}
+
+.work-shot--phone a {
+  aspect-ratio: 9 / 18.5;
+}
+
+.work-shot--wide img,
+.work-shot--phone img {
+  object-fit: cover;
+}
+
+.work-shot--diagram img {
+  object-fit: contain;
+  background: #1a1a1a;
+}
+
+.work-doc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.work-doc-card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(252, 250, 246, 0.82);
+}
+
+.work-doc-card strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
 .work-access {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -806,8 +905,23 @@ a.work-access__button:hover {
     grid-template-columns: 1fr;
   }
 
+  .work-gallery--mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .work-doc-grid {
+    grid-template-columns: 1fr;
+  }
+
   .work-item h3 {
     font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .work-gallery--barotruck,
+  .work-gallery--mobile {
+    grid-template-columns: 1fr;
   }
 }
 
