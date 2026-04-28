@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Florit | Portfolio Archive</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4f0e8;
+        --ink: #121212;
+        --muted: #5d5a55;
+        --accent: #b5532f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Noto Sans KR", sans-serif;
+        color: var(--ink);
+        background: linear-gradient(180deg, #f6f3ed 0%, #efeae1 100%);
+      }
+      main {
+        width: min(calc(100% - 32px), 760px);
+        margin: 0 auto;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      section {
+        width: 100%;
+        border-top: 2px solid var(--ink);
+        border-bottom: 1px solid rgba(18, 18, 18, 0.24);
+        padding: 2rem 0;
+      }
+      p {
+        line-height: 1.8;
+        color: var(--muted);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 7vw, 4rem);
+      }
+      .eyebrow {
+        margin: 0 0 0.8rem;
+        color: var(--accent);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+      .actions a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--ink);
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .actions a.primary {
+        background: var(--ink);
+        color: #f8f5ef;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <p class="eyebrow">Archive Page</p>
+        <h1>Florit 상세는 메인 포트폴리오에 통합되었습니다.</h1>
+        <p>
+          기존 상세 링크는 유지하되, 최신 내용은 React 기반 메인 포트폴리오의
+          Florit 카드 안에서 관리합니다. 홈, 검색, 지도, 보관함 흐름과 주요
+          모바일 화면은 메인 페이지에서 바로 확인할 수 있습니다.
+        </p>
+        <div class="actions">
+          <a class="primary" href="../index.html#projects">메인 포트폴리오로 이동</a>
+          <a href="https://github.com/tjoeunProject2/frontend" target="_blank" rel="noreferrer">
+            Frontend Repo
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
