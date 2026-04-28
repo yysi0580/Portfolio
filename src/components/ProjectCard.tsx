@@ -21,6 +21,7 @@ function ProjectAnchor({ link }: { link: ProjectLink }) {
       href={link.url}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
+      download={link.download}
       onClick={
         forceSameTabNavigation
           ? (event) => {
@@ -99,6 +100,7 @@ function ProjectCard({ project }: ProjectCardProps) {
                   href={card.action.url}
                   target={isExternalLink(card.action.url) ? "_blank" : undefined}
                   rel={isExternalLink(card.action.url) ? "noreferrer" : undefined}
+                  download={card.action.download}
                 >
                   {card.action.label}
                 </a>

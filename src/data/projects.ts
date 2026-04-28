@@ -2,6 +2,7 @@ export type ProjectLink = {
   label: string;
   url: string;
   external?: boolean;
+  download?: string;
 };
 
 export type ProjectImage = {
@@ -225,10 +226,11 @@ export const projects: Project[] = [
         eyebrow: "Android APK",
         title: "모바일 앱 다운로드",
         summary:
-          "기존 GitHub 다운로드 링크를 유지해 APK를 바로 받을 수 있게 했습니다. 면접 시 사용자 흐름 설명용 자료로 활용할 수 있습니다.",
+          "포트폴리오의 HTTPS 다운로드 경로로 APK를 바로 받을 수 있게 연결했습니다. 면접 시 사용자 흐름 설명용 자료로 활용할 수 있습니다.",
         action: {
           label: "APK 다운로드",
-          url: "https://github.com/yysi0580/Portfolio/raw/main/downloads/barotruck-app-release.apk"
+          url: asset("downloads/barotruck-app-release.apk"),
+          download: "barotruck-app-release.apk"
         }
       }
     ]
