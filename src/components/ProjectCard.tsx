@@ -14,12 +14,32 @@ function isExternalLink(url: string) {
 
 function ProjectAnchor({ link }: { link: ProjectLink }) {
   const external = link.external ?? isExternalLink(link.url);
+  const forceSameTabNavigation = !external && link.url.endsWith(".html");
 
   return (
     <a
       href={link.url}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
+      onClick={
+        forceSameTabNavigation
+          ? (event) => {
+              if (
+                event.defaultPrevented ||
+                event.button !== 0 ||
+                event.metaKey ||
+                event.altKey ||
+                event.ctrlKey ||
+                event.shiftKey
+              ) {
+                return;
+              }
+
+              event.preventDefault();
+              window.location.assign(link.url);
+            }
+          : undefined
+      }
     >
       {link.label}
     </a>

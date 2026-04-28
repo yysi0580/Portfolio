@@ -87,7 +87,7 @@ export const projects: Project[] = [
     ],
     links: [
       {
-        label: "Project Archive",
+        label: "프로젝트 상세 보기",
         url: asset("projects/barotruck.html"),
         external: false
       },
@@ -270,7 +270,7 @@ export const projects: Project[] = [
     stack: ["Flutter", "Mobile UI", "UX Flow", "Map", "Discovery"],
     links: [
       {
-        label: "Project Archive",
+        label: "프로젝트 상세 보기",
         url: asset("projects/florit.html"),
         external: false
       },
