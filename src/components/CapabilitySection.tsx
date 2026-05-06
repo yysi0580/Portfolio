@@ -7,12 +7,17 @@ const capabilityRows = [
   {
     title: "인증과 권한 제어",
     description:
-      "JWT 기반 인증과 역할별 접근 제어를 적용해 사용자 API와 관리자 API의 책임을 분리합니다."
+      "JWT access/refresh 인증과 역할별 접근 제어, user_id 기반 소유권 검증으로 보호 API의 책임을 분리합니다."
   },
   {
     title: "운영 기능 설계",
     description:
-      "사용자 화면에서 끝내지 않고 승인, 보류, 제재, 매출/정산 조회 같은 관리자 운영 기능을 함께 설계합니다."
+      "사용자 화면에서 끝내지 않고 승인, 보류, 제재, 매출/정산 조회, usage log, 배포 체크리스트 같은 운영 기능을 함께 설계합니다."
+  },
+  {
+    title: "AI 기능의 안전한 통합",
+    description:
+      "OpenAI 기반 기능을 붙일 때 structured output, fallback, rate limit, budget guard, usage log를 함께 두어 장애와 비용을 통제합니다."
   },
   {
     title: "프론트·모바일 협업",
@@ -24,7 +29,7 @@ const capabilityRows = [
 const stackColumns = [
   {
     label: "Backend",
-    value: "Java, Spring Boot, Spring Security, JPA, JWT, Swagger"
+    value: "Java, Spring Boot, Python, FastAPI, Spring Security, JPA, SQLAlchemy, JWT"
   },
   {
     label: "Frontend / App",
@@ -32,7 +37,7 @@ const stackColumns = [
   },
   {
     label: "Database / Infra / Tools",
-    value: "Oracle, MySQL, Docker, Linux, Postman, GitHub"
+    value: "Oracle, PostgreSQL, Docker, Linux, Nginx, systemd, NCP, Postman, GitHub Actions"
   }
 ];
 
