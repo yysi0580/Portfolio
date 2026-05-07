@@ -236,8 +236,117 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "observerspring",
+    id: "adhd-todo",
     order: "02",
+    title: "ADHD Todo",
+    type: "AI Productivity Backend",
+    summary:
+      "ADHD 사용자의 계획 부담을 줄이기 위해 Brain Dump를 2~5분짜리 작은 행동 후보로 분해하고, 선택·미루기·더 작게 만들기 반응을 Action 흐름으로 연결한 실행 보조 투두앱입니다.",
+    emphasis:
+      "단순 할 일 관리가 아니라, 사용자가 계획을 정리하기 전에 시스템이 작은 실행 후보를 제시하도록 설계한 FastAPI 기반 백엔드 프로젝트입니다.",
+    points: [
+      "회원가입, 로그인, JWT access/refresh token, 내 정보 조회·수정, 비밀번호 변경까지 사용자 인증 흐름을 구현했습니다.",
+      "Brain Dump 입력을 Suggestions, Feedback, Action, History, Routines 흐름으로 연결해 사용자가 선택만으로 실행 단계에 들어갈 수 있게 구성했습니다.",
+      "OpenAI Structured Outputs 기반 AI generator를 선택적으로 켜고, rule-based fallback, 캐시, rate limit, 비용 제한, 사용 로그로 운영 리스크를 낮췄습니다."
+    ],
+    stack: [
+      "Python",
+      "FastAPI",
+      "SQLAlchemy",
+      "Alembic",
+      "JWT",
+      "OpenAI API",
+      "SQLite/PostgreSQL",
+      "Pytest"
+    ],
+    links: [
+      {
+        label: "Frontend Demo",
+        url: "http://yangtheory.site:5173/today"
+      },
+      {
+        label: "Backend Repo",
+        url: "https://github.com/yysi0580/adhd-todo-api"
+      },
+      {
+        label: "API Docs",
+        url: "http://yangtheory.site:8001/docs"
+      }
+    ],
+    accessCards: [
+      {
+        eyebrow: "Frontend Demo",
+        title: "투두앱 시연 주소",
+        summary:
+          "Brain Dump를 입력하고 suggestion, action, history 흐름을 직접 확인할 수 있는 프론트엔드 시연 주소입니다.",
+        action: {
+          label: "투두앱 열기",
+          url: "http://yangtheory.site:5173/today"
+        }
+      },
+      {
+        eyebrow: "Backend API",
+        title: "API 문서 주소",
+        summary:
+          "FastAPI Swagger 문서에서 auth, brain dump, suggestions, feedback, actions, routines API 구조를 확인할 수 있습니다.",
+        action: {
+          label: "API 문서 열기",
+          url: "http://yangtheory.site:8001/docs"
+        }
+      }
+    ],
+    flowSummary:
+      "정리되지 않은 생각을 그대로 입력하면, 시스템이 작은 행동 후보를 만들고 사용자의 반응에 따라 실행 단위로 수렴시키는 흐름입니다.",
+    flows: [
+      {
+        title: "Brain Dump",
+        description:
+          "사용자가 해야 할 일을 정리하지 않고 그대로 입력하면 원본 텍스트를 저장하고 새로운 세션과 연결합니다."
+      },
+      {
+        title: "Suggestion 생성",
+        description:
+          "rule-based 또는 AI generator가 입력을 여러 개의 작은 micro-step 후보로 나누어 제시합니다."
+      },
+      {
+        title: "Feedback 반응",
+        description:
+          "do, snooze, pass, make_smaller, capture_only 반응을 저장해 성공/실패 평가가 아닌 다음 제안 조절 데이터로 사용합니다."
+      },
+      {
+        title: "Action 실행",
+        description:
+          "do 반응을 선택하면 suggestion이 active action으로 전환되고, 완료 또는 중단 상태로 마무리됩니다."
+      }
+    ],
+    documentSummary:
+      "ADHD Todo는 기획 철학과 백엔드 운영 안정성을 함께 설명할 수 있도록 핵심 구현 포인트를 분리했습니다.",
+    documents: [
+      {
+        title: "ADHD 타깃 문제 정의",
+        description:
+          "계획을 요구하지 않고 작은 행동 후보를 제시하는 방식으로 기존 투두앱과 차별화했습니다."
+      },
+      {
+        title: "FastAPI API 설계",
+        description:
+          "auth, users, brain dumps, suggestions, feedback, actions, routines를 v1 API로 분리했습니다."
+      },
+      {
+        title: "AI fallback 구조",
+        description:
+          "OpenAI 호출 실패, 제한 초과, invalid output 상황에서도 rule-based generator로 사용자 흐름을 유지합니다."
+      },
+      {
+        title: "보안·비용 통제",
+        description:
+          "JWT, 로그인 실패 차단, rate limit, AI cache, 사용량 로그, 비용 제한으로 운영 리스크를 관리했습니다."
+      }
+    ]
+  },
+  {
+    id: "observerspring",
+    order: "03",
     title: "ObserverSpring",
     type: "Backend Project",
     summary:
@@ -259,7 +368,7 @@ export const projects: Project[] = [
   },
   {
     id: "florit",
-    order: "03",
+    order: "04",
     title: "Florit",
     type: "Mobile Collaboration",
     summary:
@@ -316,7 +425,7 @@ export const projects: Project[] = [
   },
   {
     id: "newsmoa",
-    order: "04",
+    order: "05",
     title: "NewsMoa",
     type: "Frontend Practice",
     summary:
