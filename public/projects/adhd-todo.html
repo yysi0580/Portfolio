@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADHD Todo | 양시열의 포트폴리오</title>
+    <meta
+      name="description"
+      content="ADHD 사용자의 계획 부담을 줄이고 작은 실행 단계로 안내하는 FastAPI 기반 투두앱 상세 페이지입니다."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="detail-page">
+    <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="site-header__inner">
+          <a class="brand" href="../index.html" aria-label="포트폴리오 홈으로 이동">
+            <span class="brand__name">Yang Siyeol</span>
+            <span class="brand__role">ADHD Todo Detail</span>
+          </a>
+          <nav class="site-nav" aria-label="프로젝트 이동">
+            <a href="../index.html">Home</a>
+            <a href="barotruck.html">Barotruck</a>
+            <a href="adhd-todo.html" class="is-active">ADHD Todo</a>
+            <a href="florit.html">Florit</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="section detail-main" id="main-content">
+        <section class="detail-hero">
+          <div class="detail-hero__copy">
+            <p class="section-label">AI Productivity Backend</p>
+            <h1>ADHD Todo</h1>
+            <p class="detail-hero__summary">
+              ADHD Todo는 사용자가 할 일을 완벽히 정리하지 않아도, 정리되지 않은 생각을
+              Brain Dump로 받아 작은 실행 후보로 나누고 선택 가능한 행동으로 이어주는 실행 보조 앱입니다.
+              핵심은 사용자를 평가하지 않고, 사용자가 바로 고를 수 있는 작은 행동 단위로 부담을 낮추는 것입니다.
+            </p>
+            <div class="detail-actions">
+              <a class="button button--primary" href="https://yangtheory.site/" target="_blank" rel="noreferrer">투두앱 열기</a>
+              <a class="button button--secondary" href="https://github.com/yysi0580/adhd-todo-api" target="_blank" rel="noreferrer">Backend Repo</a>
+              <a class="button button--secondary" href="https://yangtheory.site/api/v1/docs" target="_blank" rel="noreferrer">API Docs</a>
+            </div>
+            <a class="detail-backlink" href="../index.html#projects">포트폴리오 프로젝트 목록으로 돌아가기</a>
+          </div>
+          <aside class="detail-aside">
+            <article class="detail-metric">
+              <span class="work-type">Concept</span>
+              <strong>계획을 요구하지 않고 작은 행동 후보를 제시하는 투두앱</strong>
+            </article>
+            <article class="detail-metric">
+              <span class="work-type">Backend</span>
+              <strong>FastAPI · SQLAlchemy · Alembic · JWT · Pytest</strong>
+            </article>
+            <article class="detail-metric">
+              <span class="work-type">AI Safety</span>
+              <strong>Structured Outputs · rule-based fallback · cache · rate limit · usage log</strong>
+            </article>
+          </aside>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">01</p>
+              <h2>문제 정의</h2>
+            </div>
+            <p class="detail-section__summary">
+              일반 투두앱은 사용자가 스스로 일을 정리하고 우선순위를 판단할 수 있다고 가정합니다.
+              ADHD Todo는 이 전제 자체를 낮추는 방향으로 설계했습니다.
+            </p>
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <h3>기존 투두앱의 부담</h3>
+              <p>
+                할 일을 쓰는 순간부터 제목, 우선순위, 날짜, 반복 여부를 정해야 하면
+                사용자는 실행 전에 계획 단계에서 먼저 지치게 됩니다.
+              </p>
+            </article>
+            <article class="detail-card">
+              <h3>Brain Dump 중심 입력</h3>
+              <p>
+                사용자는 정리된 할 일 대신 떠오르는 생각을 그대로 입력합니다.
+                시스템은 이 원문을 저장하고 작은 행동 후보로 나누는 역할을 맡습니다.
+              </p>
+            </article>
+            <article class="detail-card">
+              <h3>평가 없는 반응 데이터</h3>
+              <p>
+                완료하지 못한 행동을 실패로 보여주지 않고, do, snooze, pass, make_smaller 같은
+                반응을 다음 제안 조절용 데이터로만 사용합니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">02</p>
+              <h2>핵심 흐름</h2>
+            </div>
+            <p class="detail-section__summary">
+              앱의 기본 흐름은 Brain Dump, Suggestions, Feedback, Action으로 이어집니다.
+              사용자는 정리보다 선택에 집중합니다.
+            </p>
+          </div>
+          <div class="detail-flow-grid">
+            <article class="detail-flow">
+              <h3>1. Brain Dump</h3>
+              <p>
+                사용자가 해야 할 일을 문장 그대로 입력하면 원본 텍스트를 저장하고 세션과 연결합니다.
+              </p>
+            </article>
+            <article class="detail-flow">
+              <h3>2. Suggestions</h3>
+              <p>
+                입력 문장을 rule-based 로직 또는 AI generator로 분석해 2~5분 단위의 작은 행동 후보로 나눕니다.
+              </p>
+            </article>
+            <article class="detail-flow">
+              <h3>3. Feedback</h3>
+              <p>
+                사용자는 do, snooze, pass, make_smaller, capture_only 중 하나로 반응합니다.
+                이 반응은 성공/실패 판단이 아니라 다음 제안을 조절하는 신호입니다.
+              </p>
+            </article>
+            <article class="detail-flow">
+              <h3>4. Action</h3>
+              <p>
+                do를 선택하면 suggestion이 active action으로 전환되고, complete 또는 abort로 종료됩니다.
+              </p>
+            </article>
+            <article class="detail-flow detail-flow--full">
+              <h3>반복 사용 시나리오</h3>
+              <ul class="detail-list">
+                <li>Brain Dump를 여러 번 입력해도 session과 suggestions가 섞이지 않도록 관리</li>
+                <li>부담스러운 suggestion은 make_smaller로 더 작은 행동 후보로 재생성</li>
+                <li>완료된 action은 다시 완료하거나 중단할 수 없도록 상태 전이 제한</li>
+                <li>History에서 세션, 입력, 실행, 반응 흐름을 다시 확인</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">03</p>
+              <h2>백엔드 구현 포인트</h2>
+            </div>
+            <p class="detail-section__summary">
+              단순 CRUD보다 사용자 흐름이 끊기지 않도록 인증, 상태 전이, AI fallback, 운영 제한을 함께 설계했습니다.
+            </p>
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <h3>인증과 사용자 보호</h3>
+              <p>
+                회원가입, 로그인, access token, refresh token, 내 정보 조회와 수정, 비밀번호 변경 흐름을 구성했습니다.
+                주요 리소스는 user_id 기준으로 보호합니다.
+              </p>
+            </article>
+            <article class="detail-card">
+              <h3>도메인 분리</h3>
+              <p>
+                session, brain dump, suggestion, feedback, action, routine, history를 분리해
+                입력부터 실행까지의 흐름을 추적 가능하게 만들었습니다.
+              </p>
+            </article>
+            <article class="detail-card">
+              <h3>AI fallback</h3>
+              <p>
+                OpenAI API 오류, timeout, invalid structured output, 비용 제한 상황에서도
+                rule-based generator로 fallback해 사용자의 흐름이 끊기지 않도록 했습니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">04</p>
+              <h2>운영 안정 장치</h2>
+            </div>
+            <p class="detail-section__summary">
+              포트폴리오 시연용 프로젝트라도 실제 운영을 고려해 인증, 제한, 비용 통제 기준을 넣었습니다.
+            </p>
+          </div>
+          <div class="detail-flow-grid detail-flow-grid--compact">
+            <article class="detail-flow">
+              <h3>Login Protection</h3>
+              <p>
+                비밀번호 정책과 로그인 실패 차단을 적용해 기본 인증 보안을 강화했습니다.
+              </p>
+            </article>
+            <article class="detail-flow">
+              <h3>Rate Limit</h3>
+              <p>
+                로그인과 Brain Dump, AI 호출에 제한을 두어 반복 요청으로 인한 리스크를 낮췄습니다.
+              </p>
+            </article>
+            <article class="detail-flow">
+              <h3>AI Cost Control</h3>
+              <p>
+                AI cache, 사용자별/전체 호출 제한, 비용 제한, usage log를 통해 API 비용을 추적할 수 있게 했습니다.
+              </p>
+            </article>
+            <article class="detail-flow">
+              <h3>Production Guard</h3>
+              <p>
+                운영 환경에서 기본 secret이나 과도하게 열린 CORS 설정을 그대로 쓰지 못하도록 보호했습니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="detail-section">
+          <div class="detail-section__head">
+            <div>
+              <p class="section-index">05</p>
+              <h2>시연과 문서</h2>
+            </div>
+            <p class="detail-section__summary">
+              현재 투두앱 웹은 루트 도메인으로 정리했고, API 문서는 같은 도메인의 /api/v1/docs로 연결했습니다.
+            </p>
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <h3>Todo Web</h3>
+              <p>
+                실제 투두앱 화면에서 Brain Dump와 suggestion, action, history 흐름을 확인할 수 있습니다.
+              </p>
+              <a class="button button--primary" href="https://yangtheory.site/" target="_blank" rel="noreferrer">투두앱 열기</a>
+            </article>
+            <article class="detail-card">
+              <h3>Backend Repository</h3>
+              <p>
+                FastAPI 백엔드 코드와 README, 테스트, 배포 설정을 확인할 수 있습니다.
+              </p>
+              <a class="button button--secondary" href="https://github.com/yysi0580/adhd-todo-api" target="_blank" rel="noreferrer">레포 보기</a>
+            </article>
+            <article class="detail-card">
+              <h3>API Docs</h3>
+              <p>
+                Swagger 문서에서 auth, brain dump, suggestions, feedback, actions, routines API를 확인할 수 있습니다.
+              </p>
+              <a class="button button--secondary" href="https://yangtheory.site/api/v1/docs" target="_blank" rel="noreferrer">API 문서 열기</a>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

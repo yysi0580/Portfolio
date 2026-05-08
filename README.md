@@ -7,7 +7,7 @@ React + Vite + TypeScript 기반의 정적 포트폴리오입니다.
 
 - 백엔드/풀스택 신입 개발자 포지션에 맞춘 단일 페이지 포트폴리오입니다.
 - 핵심 메시지는 "비즈니스 흐름을 이해하고 API와 상태 로직을 구현할 수 있는 개발자"입니다.
-- 대표 프로젝트인 `Barotruck`와 `ADHD Todo`를 중심으로 도메인 상태 흐름, 인증/권한, AI 기능 안전장치, production 배포 경험이 빠르게 읽히도록 구성했습니다.
+- 대표 프로젝트인 `Barotruck`와 `ADHD Todo`를 중심으로 주문·배차·정산 흐름, 사용자 실행 보조 흐름, 인증/권한, AI 기능 안전장치, production 배포 경험이 빠르게 읽히도록 구성했습니다.
 
 ## 기술 스택
 
@@ -80,3 +80,4 @@ npm run preview
 - 기존 GitHub 저장소 링크, 관리자 웹 링크, APK 다운로드 링크는 유지했습니다.
 - 배포 주소가 바뀌면 `src/data/projects.ts`의 `accessCards`와 `links`를 함께 수정합니다.
 - `ADHD Todo`는 `https://yangtheory.site`, `Barotruck` 관리자 웹은 `https://truck.yangtheory.site` 기준으로 연결되어 있습니다.
+- `ADHD Todo` 프로젝트에는 프론트 시연 주소, FastAPI Swagger 문서 주소, 백엔드/프론트 GitHub 저장소 링크를 연결했습니다.
